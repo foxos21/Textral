@@ -45,3 +45,4 @@
 
 ## To-Fix
 - [ ] https://github.com/foxos21/Textral/issues/1
+- [ ] https://github.com/foxos21/Textral/issues/2
