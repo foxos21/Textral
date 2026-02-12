@@ -22,25 +22,28 @@
 - [ ] Trello Board?
 - [ ] Extra Theme
 - [ ] Loading screen for large folders (maybe optimizing)
+### Maybe adding
+- [ ] Merge the InfoBar with the Footer
 
 ## Settings
 - [ ] Autosave (bool)
 - [ ] Expand Tree (bool)
 - [ ] hide Root Tree (bool)
 - [ ] doubleclick to open (bool)
-### maybe adding
+### Maybe adding
 - [ ] leaf color (HEX)
 - [ ] folder color (HEX)
 - [ ] custom cat easteregg (text)
 - [ ] Warn the user that they didn't save for a long time (bool + int)
 - [ ] Autosave timer (bool + int)
+- [ ] Hide the Footer (bool)
 
 ## InfoBar
 - [X] Syntax language (show)
 - [X] time (show)
 - [X] Random Eastercat (show)
 - [X] Unsaved Indicator (show)
-### maybe adding
+### Maybe adding
 - [X] File lenght in letters (int)
 
 ## To-Fix
