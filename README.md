@@ -30,13 +30,13 @@
 - [ ] Expand Tree (bool)
 - [ ] hide Root Tree (bool)
 - [ ] doubleclick to open (bool)
+- [ ] Hide the Footer (bool)
 ### Maybe adding
 - [ ] leaf color (HEX)
 - [ ] folder color (HEX)
 - [ ] custom cat easteregg (text)
 - [ ] Warn the user that they didn't save for a long time (bool + int)
 - [ ] Autosave timer (bool + int)
-- [ ] Hide the Footer (bool)
 
 ## InfoBar
 - [X] Syntax language (show)
