@@ -5,3 +5,30 @@ Textral is a code Editor with a Terminal User Interface (TUI) allowing it to run
 
 > [!NOTE]
 > Since i am **still working** on **Textral** it will have some **visual changes** in the future
+
+## To-Do
+- [ ] Settings
+- [ ] Polish InfoBar
+- [ ] Custom Syntax Theme
+- [ ] Trello Board?
+- [ ] Extra Theme
+
+## Settings
+- [ ] Autosave (bool)
+- [ ] Expand Tree (bool)
+- [ ] hide Root Tree (bool)
+- [ ] doubleclick to open (bool)
+### maybe adding
+- [ ] leaf color (HEX)
+- [ ] folder color (HEX)
+- [ ] custom cat easteregg (text)
+- [ ] Warn the user that they didn't save for a long time (bool + int)
+- [ ] Autosave timer (bool + int)
+
+## InfoBar
+- [X] Syntax language (show)
+- [X] time (show)
+- [X] Random Eastercat (show)
+- [X] Unsaved Indicator (show)
+### maybe adding
+- [X] File lenght in letters (int)
