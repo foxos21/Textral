@@ -3,4 +3,5 @@
 
 Textral is a code Editor with a Terminal User Interface (TUI) allowing it to run on any OS
 
-! Since i am still working on Textral it will have some visual changes in the future
+> [!NOTE]
+> Since i am **still working** on **Textral** it will have some **visual changes** in the future
