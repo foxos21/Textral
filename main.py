@@ -18,7 +18,6 @@ autosave = False
 expand_tree = False
 hide_root_tree = True
 double_click_to_open = False
-unsaved_trigger = 10
 leaf_color = "green"
 folder_color = "blue"
 opened_file = ""
@@ -30,7 +29,7 @@ temp_len = 0
 root_dir = os.getcwd()
 
 # WINDOWS THREAD! : python -m nuitka --onefile --output-filename=Textral --windows-icon-from-ico=development.ico --include-package=textual --include-package=tree_sitter_python --include-package=tree_sitter --include-package=pygments --include-package=rich --include-data-file=style.tcss=./ main.py
-#SAFE : python -m pyinstaller --clean -y --onefile -n Textral --icon=development.ico --collect-all textual --collect-all tree_sitter_css --collect-all tree_sitter_bash --collect-all tree_sitter_go --collect-all tree_sitter_html --collect-all tree_sitter_java --collect-all tree_sitter_javascript --collect-all tree_sitter_json --collect-all tree_sitter_markdown --collect-all tree_sitter_regex --collect-all tree_sitter_rust --collect-all tree_sitter_sql --collect-all tree_sitter_toml --collect-all tree_sitter_xml --collect-all tree_sitter_yaml --collect-all tree_sitter_python --collect-all tree_sitter --collect-all pygments --collect-all rich --add-data=style.tcss:. main.py
+#SAFE : pyinstaller --clean -y --onefile -n Textral --icon=development.ico --collect-all textual --collect-all tree_sitter_css --collect-all tree_sitter_bash --collect-all tree_sitter_go --collect-all tree_sitter_html --collect-all tree_sitter_java --collect-all tree_sitter_javascript --collect-all tree_sitter_json --collect-all tree_sitter_markdown --collect-all tree_sitter_regex --collect-all tree_sitter_rust --collect-all tree_sitter_sql --collect-all tree_sitter_toml --collect-all tree_sitter_xml --collect-all tree_sitter_yaml --collect-all tree_sitter_python --collect-all tree_sitter --collect-all pygments --collect-all rich --add-data=style.tcss:. main.py
 # pip install "textual[syntax]"
 # pip install textual
 # pip install tree-sitter-python
@@ -85,7 +84,11 @@ syntax_languages = {
   ".vbs1": "java",
   ".ps1": "bash",
   ".spec": "yaml",
-  ".cmd": "bash"
+  ".cmd": "bash",
+  ".cfg": "toml",
+  ".ini": "toml",
+  ".properties": "toml",
+  ".gitconfig": "toml"
 }
 
 
@@ -193,11 +196,11 @@ def info_bar_clock(self):
 def update_infobar(self):
     w = "[white]|[white]"
     if saved_file:
-        is_saved = "[lightgreen]⦿[lightgreen]"
+        is_saved = "[#19ff56]⦿[#19ff56]"
     else:
-        is_saved = "[red]⦿[red]"
+        is_saved = "[#ff1952]⦿[#ff1952]"
     
-    length = f"[purple]len: {len(self.codeEditor.text)}[purple]"
+    length = f"[#7d19ff]l:{len(self.codeEditor.text)}[#7d19ff]"
     
     if syntax_language == "":
         syntax = f"[grey]N/A[grey]"
