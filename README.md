@@ -42,3 +42,6 @@
 - [X] Unsaved Indicator (show)
 ### maybe adding
 - [X] File lenght in letters (int)
+
+## To-Fix
+- [ ] https://github.com/foxos21/Textral/issues/1
