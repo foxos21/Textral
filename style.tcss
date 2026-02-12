@@ -1,0 +1,95 @@
+Screen {
+	background: $background;
+	layout: horizontal;
+}
+
+#sidebar {
+	width: 30;
+	border-right: tall $primary;
+	background: $panel;
+}
+
+Tree {
+	padding: 1;
+	background: transparent;
+	color: $text;
+}
+
+/* Styling the Tree cursor/highlight */
+Tree > .tree--cursor {
+	background: $primary 30%;
+	color: $secondary;
+	text-style: bold;
+}
+
+TextArea {
+	border: none;
+	background: $surface;
+	color: $text;
+}
+
+/* Selection highlight in TextArea */
+TextArea > .text-area--selection {
+	background: $secondary 40%;
+}
+
+Header {
+	background: $primary;
+	color: white;
+}
+
+Footer {
+	background: $panel;
+}
+
+.codeEditor {
+	height: 100%;
+	width: 2.5fr;
+	border: round #6339f9;
+}
+
+.fileExplorer {
+	height: 100%;
+	width: 1fr;
+	border: round #6339f9;
+}
+
+.fileExplorerHidden {
+	visibility: hidden;
+	width: 0%;
+}
+
+Tree {
+	padding: 1;
+	background: transparent;
+}
+
+Tree > .tree--cursor {
+	background: $primary 30%;
+	color: $secondary;
+	text-style: bold;
+}
+
+TextArea {
+	background: $surface;
+}
+
+TextArea > .text-area--selection {
+	background: $secondary 35%;
+}
+
+Header {
+	background: $primary;
+	color: white;
+}
+
+.infoBar {
+	content-align: center middle;
+    # color: red;
+	align-vertical: bottom;
+	text-align: right;
+	height: auto;
+}
+
+
+
