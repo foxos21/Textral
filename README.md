@@ -21,6 +21,7 @@
 - [ ] Custom Syntax Theme
 - [ ] Trello Board?
 - [ ] Extra Theme
+- [ ] Loading screen for large folders (maybe optimizing)
 
 ## Settings
 - [ ] Autosave (bool)
