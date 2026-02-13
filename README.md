@@ -1,5 +1,5 @@
 # Textral
-![Showcase image](https://github.com/foxos21/Textral/blob/main/thumbnail.png?raw=true)
+![Showcase image](https://github.com/foxos21/Textral/blob/main/thumbnaill.png?raw=true)
 
 ### Textral is a code Editor with a Terminal User Interface (TUI) allowing it to run on any OS
 
@@ -11,7 +11,7 @@
 > **Textral** is now available **only** in a **pre-release**
 
 - ### Windows
-  - Just donwload the **[pre-relase Textral.exe](https://github.com/foxos21/Textral/releases/tag/V1.7)**
+  - Just donwload the **[pre-relase Textral.exe](https://github.com/foxos21/Textral/releases/tag/V1.8)**
 - ### Linux
   - **I didn't build a Linux pre-release** yet so you'll need to **compile it yourself** or **run it raw**
 
