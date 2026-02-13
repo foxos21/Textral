@@ -23,7 +23,7 @@
 - [ ] Tabs
 - [ ] Extra Theme
 - [X] Loading screen for large folders (maybe optimizing)
-- [X] Allow loading a file by specifying the path while launching in the Terminal
+- [X] Allow loading a file by dropping it on the executable or by a terminal argument
 ### Maybe adding
 - [ ] Merge the InfoBar with the Footer
 - [ ] Search in codeEditor
