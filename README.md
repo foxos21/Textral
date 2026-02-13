@@ -20,6 +20,7 @@
 - [ ] Polish InfoBar
 - [ ] Custom Syntax Theme
 - [ ] Trello Board?
+- [ ] Tabs
 - [ ] Extra Theme
 - [X] Loading screen for large folders (maybe optimizing)
 - [X] Allow loading a file by specifying the path while launching in the Terminal
