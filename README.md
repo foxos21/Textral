@@ -44,6 +44,7 @@
 - [X] time (show)
 - [X] Random Eastercat (show)
 - [X] Unsaved Indicator (show)
+- [X] Current opened file (show)
 ### Maybe adding
 - [X] File lenght in letters (int)
 
