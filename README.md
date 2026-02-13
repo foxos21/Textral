@@ -2,6 +2,7 @@
 ![Showcase image](https://github.com/foxos21/Textral/blob/main/thumbnaill.png?raw=true)
 
 ### Textral is a code Editor with a Terminal User Interface (TUI) allowing it to run on any OS
+- Coded with the library [Textual](https://textual.textualize.io/).
 
 > [!NOTE]
 > Since i am **still working** on **Textral** it will have some **visual changes** in the future
