@@ -1,26 +1,30 @@
 from textual.app import App, ComposeResult
 from textual.containers import Horizontal, Vertical
-from textual.widgets import Static, TextArea, Tree, Footer, Label
+from textual.widgets import Static, TextArea, Tree, Footer, ProgressBar
 from textual.widgets.text_area import TextAreaTheme
 from textual.binding import Binding
+from textual import events, work
 from textual.theme import Theme
 from time import time, sleep
 from rich.style import Style
-from textual import events
+from pathlib import Path
 import threading
 import datetime
 import random
+import sys
 import os
 
 
-version = 1.7
+version = 1.8
 autosave = False
 expand_tree = False
 hide_root_tree = True
 double_click_to_open = False
+show_progressbar = True
 leaf_color = "green"
 folder_color = "blue"
 opened_file = ""
+file_to_open_path = None
 saved_file = True
 isTreeHidden = False
 syntax_language = "Textral"
@@ -166,7 +170,7 @@ welcome_message = f'''
 ___________              __                .__   
 \__    ___/___ ___  ____/  |_____________  |  |  
   |    |_/ __ \\  \/  /\   __\_  __ \__   \ |  |  
-  |    |\  ___/ >    <  |  |  |  | \// __ \|  |__
+  |    |\  ___/ >    <  |  |  |  |\/ / __ \|  |__
   |____| \___  >__/\_ \ |__|  |__|  (____  /____/
              \/      \/                  \/      
 - Version: {version}
@@ -194,25 +198,27 @@ def info_bar_clock(self):
 
 
 def update_infobar(self):
-    w = "[white]|[white]"
+    # w = "[white]|[/white]"
+    w = "[grey]|[/grey]"
     if saved_file:
-        is_saved = "[#19ff56]⦿[#19ff56]"
+        is_saved = "[#19ff56]⦿[/#19ff56]"
     else:
-        is_saved = "[#ff1952]⦿[#ff1952]"
+        is_saved = "[#ff1952]⦿[/#ff1952]"
     
-    length = f"[#7d19ff]l:{len(self.codeEditor.text)}[#7d19ff]"
+    length = f"[#7d19ff]l:{len(self.codeEditor.text)}[/#7d19ff]"
     
     if syntax_language == "":
-        syntax = f"[grey]N/A[grey]"
+        syntax = f"[grey]N/A[/grey]"
     else:
-        syntax = f"[orange]{syntax_language}[orange]"
+        syntax = f"[orange]{syntax_language}[/orange]"
     
     time = datetime.datetime.now()
     time = [time.strftime("%I"), time.strftime("%M")]
     
     # 🕑⌚
-    render = f"{w} ⌚ {time[0]}:{time[1]} {w} {length} {w} {syntax} {w} {is_saved} {w} [pink]{eastercat}[pink] {w}"
+    render = f"{w} {os.path.basename(opened_file)} {w} ⌚ {time[0]}:{time[1]} {w} {length} {w} {syntax} {w} {is_saved} {w}"
     self.infoBar.content = render
+    self.infoBarLeft.content = f"{w}[pink] {eastercat} [/pink]{w}"
 
 
 def get_language(self, path):
@@ -221,31 +227,6 @@ def get_language(self, path):
     file_name_extension = file_name_extension[-1].replace(" ", "")
     # self.notify(message=f"gotlang: {file_name_extension}")
     return syntax_languages.get(file_name_extension, "")
-    
-
-def add_to_tree(root, directory):
-    entries = os.listdir(directory)
-
-    # Separate folders and files
-    folders = []
-    files = []
-
-    for entry in entries:
-        full_path = os.path.join(directory, entry)
-        if os.path.isdir(full_path):
-            folders.append((entry, full_path))
-        else:
-            files.append((entry, full_path))
-            
-    # 2 Then add all files
-    for file, full_path in sorted(files):
-        root.add_leaf(f"[{leaf_color}]{file}[/{leaf_color}]", data=full_path)
-
-    # 1 Add all folders first
-    for folder, full_path in sorted(folders):
-        full_path = os.path.join(directory, folder)
-        new_folder = root.add(f"[{folder_color}]{folder}[/{folder_color}]", expand=expand_tree, data=full_path)
-        add_to_tree(new_folder, full_path)
 
 
 class ExtraCodeEditor(TextArea):
@@ -283,7 +264,7 @@ class Textral(App):
         Binding(key="ctrl+r", action="Refresh File Tree", description="Refresh", key_display="⟳"),
         Binding(key="ctrl+t", action="show/hide File Tree", description="Hide", key_display="|<")
     ]
-      
+    
 
     def compose(self) -> ComposeResult:
         yield Footer()
@@ -299,12 +280,20 @@ class Textral(App):
                 self.codeEditor = ExtraCodeEditor.code_editor(welcome_message, language="python", theme="css")
                 #self.codeEditor = TextArea.code_editor(welcome_message, language="python")
                 yield self.codeEditor
+
+            self.fileTreeProgressBar = ProgressBar(classes="fileExplorerHidden")
+            yield self.fileTreeProgressBar
             
-            self.infoBar = Static(dummy_infobar, classes="infoBar")
-            yield self.infoBar
-        
-        
+            with Horizontal(id="infoBarGroup"):
+                self.infoBarLeft = Static("EasterEgg", classes="infoBarLeft")
+                self.infoBar = Static(dummy_infobar, classes="infoBar")
+                yield self.infoBarLeft
+                yield self.infoBar
+
+
     def on_mount(self) -> None:
+        global temp_len, opened_file, syntax_language, saved_file
+        
         self.fileExplorer.classes = "fileExplorer"
         self.fileExplorer.border_title = "File Tree"
         
@@ -312,7 +301,7 @@ class Textral(App):
         self.codeEditor.border_title = "Code Editor"
         
         self.refresh_file_tree()
-        global temp_len
+        
         temp_len = len(self.codeEditor.text)
         
         infoBarClock = threading.Thread(target=info_bar_clock, args=(self,), daemon=True)
@@ -321,6 +310,23 @@ class Textral(App):
         self.register_theme(Textral_DARK)
         self.register_theme(Textral_LIGHT)
         self.theme = "textral-dark"
+        
+        if file_to_open_path != None:
+            try:
+                with open(file_to_open_path, "r") as f:
+                    self.codeEditor.text = f.read()
+                    syntax_language = get_language(self, file_to_open_path)
+                    self.codeEditor.language = syntax_language
+                    temp_len = len(self.codeEditor.text)
+                    opened_file = file_to_open_path
+            except PermissionError:
+                pass
+            except Exception as e:
+                opened_file = ""
+                self.notify(message=f"File could not be read! \n\n [[{e}]]", title="Code Editor", severity='error', timeout=3)
+                
+            saved_file = True
+            update_infobar(self)
         
     
     def on_key(self, event: events.Key) -> None:
@@ -354,35 +360,95 @@ class Textral(App):
         
         # self.notify(f"Double-clicked: {event.node.label} => {event.node.data}")
         
-        if opened_file == "" or not autosave:
+        if opened_file == "" or not autosave and not os.path.isdir(event.node.data):
             opened_file = event.node.data
-        else:
+        elif not os.path.isdir(event.node.data):
             self.save_code_editor()
             opened_file = event.node.data
         
         try:
-            with open(event.node.data, "r") as f:
+            with open(event.node.data, "r") as f: # Load file to CodeEditor
                 self.codeEditor.text = f.read()
                 syntax_language = get_language(self, event.node.data)
                 self.codeEditor.language = syntax_language
                 temp_len = len(self.codeEditor.text)
         except PermissionError:
-            pass
+            if os.path.isdir(event.node.data) and event.node.is_expanded:
+                self.refresh_file_tree(treeNodeRoot=event.node, source_dir=event.node.data)
+            else:
+                pass # maybe raise PermissionError
         except Exception as e:
             opened_file = ""
             self.notify(message=f"File could not be read! \n\n [[{e}]]", title="Code Editor", severity='error', timeout=3)
             
         saved_file = True
         update_infobar(self)
-        
-        
-    def refresh_file_tree(self) -> None:
-        self.notify(title="File Tree", message="Refreshing ⟳", severity='information', timeout=2)
+
+
+    def add_to_tree(self, root, directory):
+        try:
+            entries = os.listdir(directory)
+        except PermissionError:
+            pass
+        except OSError:
+            pass
+
+        folders = []
+        files = []
+
+        for entry in entries:
+            full_path = os.path.join(directory, entry)
+            if os.path.isdir(full_path):
+                folders.append((entry, full_path))
+            else:
+                files.append((entry, full_path))
+
+        # Setup Progress Bar
+        if show_progressbar:
+            self.call_from_thread(self.fileTreeProgressBar.update, total=len(entries))
+            self.fileTreeProgressBar.classes = "fileTreeProgressBar" # Note: classes is usually safe, but call_from_thread is safer
+
+        # 1. Add all files
+        for file, full_path in sorted(files):
+            # We wrap the widget-modifying methods
+            self.call_from_thread(root.add_leaf, f"[{leaf_color}]{file}[/{leaf_color}]", data=full_path)
+            if show_progressbar:
+                self.call_from_thread(self.fileTreeProgressBar.advance, 1)
+
+        # 2. Add all folders
+        for folder, full_path in sorted(folders):
+            new_folder = self.call_from_thread(
+                root.add, 
+                f"[{folder_color}]{folder}[/{folder_color}]", 
+                expand=expand_tree, 
+                data=full_path
+            )
+            # Recursively call within the same thread
+            # self.add_to_tree(new_folder, full_path)
+            if show_progressbar:
+                self.call_from_thread(self.fileTreeProgressBar.advance, 1)
+
+
+    # Inside your Class
+    @work(exclusive=True, thread=True)
+    def refresh_file_tree(self, source_dir=None, treeNodeRoot=None) -> None:
+        if not treeNodeRoot:
+            self.notify(title="File Tree", message="Refreshing ⟳", severity='information', timeout=2)
         
         root = self.fileExplorer.root
-        root.remove_children()
+        # UI updates from a thread must use call_from_thread
+        if not source_dir:
+            self.call_from_thread(root.remove_children)
         
-        add_to_tree(root, root_dir)
+        # Start the recursive addition
+        if not source_dir:
+            self.add_to_tree(root=root, directory=root_dir)
+        else:
+            treeNodeRoot.remove_children()
+            self.add_to_tree(root=treeNodeRoot, directory=source_dir)
+        
+        if show_progressbar:
+            self.fileTreeProgressBar.classes = "fileExplorerHidden"
     
        
     def save_code_editor(self) -> None:
@@ -391,7 +457,7 @@ class Textral(App):
         file_name = os.path.basename(opened_file)
         # self.notify(message = opened_file)
         try:
-            if opened_file != "" and self.codeEditor.text != "":
+            if opened_file != "" and self.codeEditor.text != "" and not os.path.isdir(opened_file):
                 with open(opened_file, "w") as f:
                     f.write(self.codeEditor.text)
                 self.notify(title="Code Editor", message=f"Saved to {file_name}", severity='information', timeout=2)
@@ -420,5 +486,7 @@ class Textral(App):
 
  
 if __name__ == "__main__":
+    if len(sys.argv) == 2:
+        file_to_open_path=sys.argv[1]
     app = Textral()
     app.run()
