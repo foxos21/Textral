@@ -21,8 +21,8 @@
 - [ ] Custom Syntax Theme
 - [ ] Trello Board?
 - [ ] Extra Theme
-- [ ] Loading screen for large folders (maybe optimizing)
-- [ ] Allow loading a file by specifying the path while launching in the Terminal
+- [X] Loading screen for large folders (maybe optimizing)
+- [X] Allow loading a file by specifying the path while launching in the Terminal
 ### Maybe adding
 - [ ] Merge the InfoBar with the Footer
 
@@ -49,4 +49,4 @@
 
 ## To-Fix
 - [ ] https://github.com/foxos21/Textral/issues/1
-- [ ] https://github.com/foxos21/Textral/issues/2
+- [X] https://github.com/foxos21/Textral/issues/2
