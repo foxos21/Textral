@@ -12,7 +12,7 @@
 > **Textral** is now available **only** in a **pre-release**
 
 - ### Windows
-  - Just donwload the **[pre-relase Textral.exe](https://github.com/foxos21/Textral/releases/tag/V1.8)**
+  - Just donwload the **[pre-relase Textral.exe](https://github.com/foxos21/Textral/releases/latest)**
 - ### Linux
   - **I didn't build a Linux pre-release** yet so you'll need to **compile it yourself** or **run it raw**
 
@@ -23,8 +23,8 @@
 - [ ] Trello Board?
 - [ ] Tabs
 - [ ] Extra Theme
-- [X] Loading screen for large folders (maybe optimizing)
-- [X] Allow loading a file by dropping it on the executable or by a terminal argument
+- [X] Loading screen for large folders (maybe optimizing) <code style="color : red">[Textral-1.8](https://github.com/foxos21/Textral/releases/tag/V1.8)</code>
+- [X] Allow loading a file by dropping it on the executable or by a terminal argument <code style="color : red">[Textral-1.8](https://github.com/foxos21/Textral/releases/tag/V1.8)</code>
 ### Maybe adding
 - [ ] Merge the InfoBar with the Footer
 - [ ] Search in codeEditor
@@ -45,13 +45,13 @@
 - [ ] Autosave timer (bool + int)
 
 ## InfoBar
-- [X] Syntax language (show)
-- [X] time (show)
-- [X] Random Eastercat (show)
-- [X] Unsaved Indicator (show)
-- [X] Current opened file (show)
+- [X] Syntax language (show) <code style="color : red">[Textral-1.8](https://github.com/foxos21/Textral/releases/tag/V1.7)</code>
+- [X] time (show) <code style="color : red">[Textral-1.8](https://github.com/foxos21/Textral/releases/tag/V1.7)</code>
+- [X] Random Eastercat (show) <code style="color : red">[Textral-1.8](https://github.com/foxos21/Textral/releases/tag/V1.7)</code>
+- [X] Unsaved Indicator (show) <code style="color : red">[Textral-1.8](https://github.com/foxos21/Textral/releases/tag/V1.7)</code>
+- [X] Current opened file (show) <code style="color : red">[Textral-1.8](https://github.com/foxos21/Textral/releases/tag/V1.7)</code>
 ### Maybe adding
-- [X] File lenght in letters (int)
+- [X] File lenght in letters (int) <code style="color : red">[Textral-1.8](https://github.com/foxos21/Textral/releases/tag/V1.7)</code>
 
 ## To-Fix
 - [ ] https://github.com/foxos21/Textral/issues/1
