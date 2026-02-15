@@ -45,14 +45,14 @@
 - [ ] Autosave timer (bool + int)
 
 ## InfoBar
-- [X] Syntax language (show) <code style="color : red">[Textral-1.8](https://github.com/foxos21/Textral/releases/tag/V1.7)</code>
-- [X] time (show) <code style="color : red">[Textral-1.8](https://github.com/foxos21/Textral/releases/tag/V1.7)</code>
-- [X] Random Eastercat (show) <code style="color : red">[Textral-1.8](https://github.com/foxos21/Textral/releases/tag/V1.7)</code>
-- [X] Unsaved Indicator (show) <code style="color : red">[Textral-1.8](https://github.com/foxos21/Textral/releases/tag/V1.7)</code>
-- [X] Current opened file (show) <code style="color : red">[Textral-1.8](https://github.com/foxos21/Textral/releases/tag/V1.7)</code>
+- [X] Syntax language (show) <code style="color : red">[Textral-1.7](https://github.com/foxos21/Textral/releases/tag/V1.7)</code>
+- [X] time (show) <code style="color : red">[Textral-1.7](https://github.com/foxos21/Textral/releases/tag/V1.7)</code>
+- [X] Random Eastercat (show) <code style="color : red">[Textral-1.7](https://github.com/foxos21/Textral/releases/tag/V1.7)</code>
+- [X] Unsaved Indicator (show) <code style="color : red">[Textral-1.7](https://github.com/foxos21/Textral/releases/tag/V1.7)</code>
+- [X] Current opened file (show) <code style="color : red">[Textral-1.7](https://github.com/foxos21/Textral/releases/tag/V1.7)</code>
 ### Maybe adding
-- [X] File lenght in letters (int) <code style="color : red">[Textral-1.8](https://github.com/foxos21/Textral/releases/tag/V1.7)</code>
+- [X] File lenght in letters (int) <code style="color : red">[Textral-1.7](https://github.com/foxos21/Textral/releases/tag/V1.7)</code>
 
 ## To-Fix
 - [ ] https://github.com/foxos21/Textral/issues/1
-- [X] https://github.com/foxos21/Textral/issues/2
+- [X] https://github.com/foxos21/Textral/issues/2 <code style="color : red">[Textral-1.8](https://github.com/foxos21/Textral/releases/tag/V1.8)</code>
