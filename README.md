@@ -1,5 +1,5 @@
 # Textral
-![Showcase image](https://github.com/foxos21/Textral/blob/main/thumbnaill.png?raw=true)
+![Showcase image](https://github.com/foxos21/Textral/blob/main/thumbnails/thumbnail-1.8.png?raw=true)
 
 ### Textral is a code Editor with a Terminal User Interface (TUI) allowing it to run on any OS
 - Coded with the library [Textual](https://textual.textualize.io/).
