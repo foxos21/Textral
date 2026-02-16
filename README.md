@@ -1,8 +1,17 @@
 # Textral
 ![Showcase image](https://github.com/foxos21/Textral/blob/main/thumbnails/thumbnail-1.8.png?raw=true)
 
+[![Support Me Kofi](https://img.shields.io/badge/Ko--fi-F16061?style=for-the-badge&logo=ko-fi&logoColor=white)](https://ko-fi.com/lixidixy)
+[![Support Me Paypal](https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white)
+](https://www.paypal.com/paypalme/gimmemoonla)
+[![Youtube](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/@lixidixy4197?sub_confirmation=1)
+[![Works on Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)](https://github.com/foxos21/Textral?tab=readme-ov-file#linux)
+[![Works on Windows](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)](https://github.com/foxos21/Textral?tab=readme-ov-file#windows)
+
 ### Textral is a code Editor with a Terminal User Interface (TUI) allowing it to run on any OS
-- Coded with the library [Textual](https://textual.textualize.io/).
+- Coded with the library  [![Static Badge](https://img.shields.io/badge/Textual-8.0.0-brightgreen
+)
+](https://textual.textualize.io/)
 
 > [!NOTE]
 > Since i am **still working** on **Textral** it will have some **visual changes** in the future
