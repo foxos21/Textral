@@ -1,4 +1,4 @@
-# Textral
+# ⌨️Textral - TUI Code Editor
 ![Showcase image](https://github.com/foxos21/Textral/blob/main/thumbnails/thumbnail-1.8.png?raw=true)
 
 [![Support Me Kofi](https://img.shields.io/badge/Ko--fi-F16061?style=for-the-badge&logo=ko-fi&logoColor=white)](https://ko-fi.com/lixidixy)
@@ -7,6 +7,8 @@
 [![Youtube](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/@lixidixy4197?sub_confirmation=1)
 [![Works on Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)](https://github.com/foxos21/Textral?tab=readme-ov-file#linux)
 [![Works on Windows](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)](https://github.com/foxos21/Textral?tab=readme-ov-file#windows)
+[![Latest Release](https://img.shields.io/github/v/release/foxos21/Textral?style=for-the-badge)](https://github.com/foxos21/Textral/releases/latest)
+![Last Commit](https://img.shields.io/github/last-commit/foxos21/Textral?style=for-the-badge)
 
 ### Textral is a code Editor with a Terminal User Interface (TUI) allowing it to run on any OS
 - Coded with the library  [![Static Badge](https://img.shields.io/badge/Textual-8.0.0-brightgreen
