@@ -1,5 +1,5 @@
 # ⌨️Textral - TUI Code Editor
-![Showcase image](https://github.com/foxos21/Textral/blob/main/thumbnails/thumbnail-1.8.png?raw=true)
+![Showcase image](https://github.com/foxos21/Textral/blob/main/thumbnails/thumbnail-1.9.png?raw=true)
 
 [![Support Me Kofi](https://img.shields.io/badge/Ko--fi-F16061?style=for-the-badge&logo=ko-fi&logoColor=white)](https://ko-fi.com/lixidixy)
 [![Support Me Paypal](https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white)
@@ -19,21 +19,19 @@
 > Since i am **still working** on **Textral** it will have some **visual changes** in the future
 
 # Installation
-> [!WARNING]
-> **Textral** is now available **only** in a **pre-release**
 
 - ### Windows
-  - Just donwload the **[pre-relase Textral.exe](https://github.com/foxos21/Textral/releases/latest)**
+  - Just donwload the relase **[Textral.exe](https://github.com/foxos21/Textral/releases/latest)**
 - ### Linux
-  - **I didn't build a Linux pre-release** yet so you'll need to **compile it yourself** or **run it raw**
+  - **I didn't build a Linux release** yet so you'll need to **compile it yourself** or **run it raw**
 
 ## To-Do
-- [ ] Settings
+- [X] Settings <code style="color : red">[Textral-1.9](https://github.com/foxos21/Textral/releases/tag/V1.9)</code>
 - [ ] Polish InfoBar
 - [ ] Custom Syntax Theme
 - [ ] Trello Board?
 - [ ] Tabs
-- [ ] Extra Theme
+- [X] Extra Themes <code style="color : red">[Textral-1.9](https://github.com/foxos21/Textral/releases/tag/V1.9)</code>
 - [X] Loading screen for large folders (maybe optimizing) <code style="color : red">[Textral-1.8](https://github.com/foxos21/Textral/releases/tag/V1.8)</code>
 - [X] Allow loading a file by dropping it on the executable or by a terminal argument <code style="color : red">[Textral-1.8](https://github.com/foxos21/Textral/releases/tag/V1.8)</code>
 ### Maybe adding
@@ -43,11 +41,12 @@
 - [ ] Create Files
 
 ## Settings
-- [ ] Autosave (bool)
-- [ ] Expand Tree (bool)
-- [ ] hide Root Tree (bool)
-- [ ] doubleclick to open (bool)
-- [ ] Hide the Footer (bool)
+- [X] Autosave (bool) <code style="color : red">[Textral-1.9](https://github.com/foxos21/Textral/releases/tag/V1.9)</code>
+- [X] hide Root Tree (bool) <code style="color : red">[Textral-1.9](https://github.com/foxos21/Textral/releases/tag/V1.9)</code>
+- [X] doubleclick to open (bool) <code style="color : red">[Textral-1.9](https://github.com/foxos21/Textral/releases/tag/V1.9)</code>
+- [X] Hide the Footer (bool) <code style="color : red">[Textral-1.9](https://github.com/foxos21/Textral/releases/tag/V1.9)</code>
+- [X] Safety Backup (bool) <code style="color : red">[Textral-1.9](https://github.com/foxos21/Textral/releases/tag/V1.9)</code>
+- [X] Default Theme (choice) <code style="color : red">[Textral-1.9](https://github.com/foxos21/Textral/releases/tag/V1.9)</code>
 ### Maybe adding
 - [ ] leaf/file color (HEX)
 - [ ] folder color (HEX)
@@ -65,5 +64,5 @@
 - [X] File lenght in letters (int) <code style="color : red">[Textral-1.7](https://github.com/foxos21/Textral/releases/tag/V1.7)</code>
 
 ## To-Fix
-- [ ] https://github.com/foxos21/Textral/issues/1
+- [X] https://github.com/foxos21/Textral/issues/1 <code style="color : red">[Textral-1.9](https://github.com/foxos21/Textral/releases/tag/V1.9)</code>
 - [X] https://github.com/foxos21/Textral/issues/2 <code style="color : red">[Textral-1.8](https://github.com/foxos21/Textral/releases/tag/V1.8)</code>
