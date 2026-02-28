@@ -23,7 +23,8 @@
 - ### Windows
   - Just donwload the relase **[Textral.exe](https://github.com/foxos21/Textral/releases/latest)**
 - ### Linux
-  - **I didn't build a Linux release** yet so you'll need to **compile it yourself** or **run it raw**
+  - Now only in ```.run/binary``` format Linux release **[Textral.exe](https://github.com/foxos21/Textral/releases/latest)**
+  - planning on adding ```.appimage```
 
 ## To-Do
 - [X] Settings <code style="color : red">[Textral-1.9](https://github.com/foxos21/Textral/releases/tag/V1.9)</code>
