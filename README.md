@@ -23,7 +23,7 @@
 - ### Windows
   - Just donwload the relase **[Textral.exe](https://github.com/foxos21/Textral/releases/latest)**
 - ### Linux
-  - Now only in ```.run/binary``` format Linux release **[Textral.exe](https://github.com/foxos21/Textral/releases/latest)**
+  - Now only in ```.run/binary``` format Linux release **[Textral](https://github.com/foxos21/Textral/releases/latest)**
   - planning on adding ```.appimage```
 
 ## To-Do
